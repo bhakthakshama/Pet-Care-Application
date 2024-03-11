@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Employee Details</h2>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstname" placeholder="First Name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastname" placeholder="Last Name">
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline">
+        <mat-label>Email ID</mat-label>
+        <input matInput formControlName="email" placeholder="Email id">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <textarea matInput formControlName="phone" placeholder="Contact no"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="address" placeholder="Address"></textarea>
+      </mat-form-field>
+
+</form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+<button mat-raised-button color="accent" style="height: 30px; width: 70px;" (click)="addEmployee()">{{action}}</button>
+<button mat-raised-button color="warn" mat-dialog-close style="margin-left: 8px; height: 30px;width: 70px;">CANCEL</button>
+</div>
+
