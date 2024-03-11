@@ -18,6 +18,8 @@ export class AppComponent implements OnInit{
 
   displayedColumns : string[] = ['firstname', 'lastname', 'email' , 'phone','address', 'action']
 
+  
+
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
