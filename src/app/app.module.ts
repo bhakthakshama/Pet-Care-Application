@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RouterModule, Routes } from '@angular/router'
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {FormDataComponent} from './form-data/form-data.component';
@@ -18,11 +20,24 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import {MatCardModule} from '@angular/material/card';
+import { ReviewComponent } from './review/review.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+// const routes: Routes = [
+//   { path : 'home', component: HomeComponent },
+//   { path : 'about', component : AboutComponent},
+// ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormDataComponent
+    FormDataComponent,
+    HomeComponent,
+    AboutComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +55,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSortModule,
     MatPaginatorModule,
     MatTableModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

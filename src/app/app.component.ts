@@ -6,6 +6,9 @@ import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {AboutComponent} from './about/about.component';
+import {Router} from '@angular/router'
+import { ReviewComponent } from './review/review.component';
 
 
 @Component({
@@ -16,19 +19,28 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit{
   title = 'emscrud';
 
-  displayedColumns : string[] = ['firstname', 'lastname', 'email' , 'phone','address', 'action']
+  displayedColumns : string[] = ['firstname', 'lastname', 'email' , 'phone','address', 'petname', 'petprice','action']
 
   
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
-  constructor(private dialog : MatDialog, private api : ApiService) {}
+  constructor(private dialog : MatDialog, private api : ApiService, private router : Router) {}
 
   dataSource !: MatTableDataSource<any>;
 
   ngOnInit(): void {
     this.getAllEmployees()
+  }
+
+  jumpnewpage() : boolean {
+    return this.router.url === "/";
+  }
+
+  bark()
+  {
+    alert("BOW BOW !!")
   }
 
   openForm()
@@ -43,6 +55,13 @@ export class AppComponent implements OnInit{
           }
         }
         )
+  }
+
+  openReview()
+  {
+    this.dialog.open(ReviewComponent, {
+      width : '40%'
+    });
   }
 
   getAllEmployees()
@@ -61,12 +80,18 @@ export class AppComponent implements OnInit{
     )
   }
 
+
+
   applyFilter(event : Event)
   {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+      // if (id == filterValue)
+      // {
+      //   this.api.getEmployee();
+      // }
     }
   }
 

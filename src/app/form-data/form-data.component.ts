@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ApiService } from '../service/api.service'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {AboutComponent} from '../about/about.component'
 
 @Component({
   selector: 'app-form-data',
@@ -24,7 +25,9 @@ export class FormDataComponent implements OnInit {
       lastname : ['', Validators.required],
       email : ['', Validators.required],
       phone : ['', Validators.required],
-      address : ['', Validators.required]
+      address : ['', Validators.required],
+      petname : ['', Validators.required],
+      petprice : ['', Validators.required]
     })
 
     if(this.editData)
@@ -35,6 +38,8 @@ export class FormDataComponent implements OnInit {
       this.productForm.controls['email'].setValue(this.editData.email)
       this.productForm.controls['phone'].setValue(this.editData.phone)
       this.productForm.controls['address'].setValue(this.editData.address)
+      this.productForm.controls['petname'].setValue(this.editData.petname)
+      this.productForm.controls['petprice'].setValue(this.editData.petprice)
     }
   }
 
