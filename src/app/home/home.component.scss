@@ -1,0 +1,41 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+body{
+  background-color: cadetblue;
+  }
+
+span {
+  margin-left: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+.container{
+  
+  max-width: 1300px;
+  margin: 0px auto;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+button{
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color:rgb(245, 245, 245);
+  height: 40px; 
+  width: 150px; 
+  font-weight: bolder;
+}
+
+.left{
+  padding: 5rem 20rem;
+  vertical-align: middle;
+}
+

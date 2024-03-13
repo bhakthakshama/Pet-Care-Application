@@ -2,7 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ApiService } from '../service/api.service'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {AboutComponent} from '../about/about.component'
+import {AboutComponent} from '../about/about.component';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-form-data',

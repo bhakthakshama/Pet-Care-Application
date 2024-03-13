@@ -1,98 +1,18 @@
-<body style="background-color: cadetblue;">
 <mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon routerLink="frontpage">home</mat-icon>
+</button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon routerLink="" style="background-color: burlywood;">home</mat-icon>
+        <mat-icon routerLink="home">dashboard</mat-icon>
     </button>
-    <mat-icon routerLink="about" style="color:rgb(231, 224, 213); margin-left: 10px; margin-right: 10px;" matTooltip="view all pets">perm_media</mat-icon>
-    <h1 style=" margin-left: 500px; text-align: center;color: rgb(243, 233, 219); font-family:system-ui, -apple-system, BlinkMacSystemFont, 
-                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> PET CARE MANAGEMENT 
-                <mat-icon style="margin-left: 10px;" (click)="bark()">pets</mat-icon> </h1>
+    <h1> PET CARE MANAGEMENT<mat-icon style="margin-left: 10px;" (click)="bark()">pets</mat-icon> </h1>
     <span class="example-spacer"></span>
-    <div class="example-button-row">
-        <button mat-raised-button color="accent" style="height: 40px; width: 120px; font-weight: bolder;background-color: burlywood;" 
-                                                                (click)="openForm()">ADD EMPLOYEE</button>
-        <button mat-raised-button color="accent" routerLink="" style="height: 40px; width: 120px; margin-left: 10px; margin-right: 10px; 
-                                                        font-weight: bolder;background-color: burlywood;" (click)="openReview()">ADD REVIEW</button>
-        
-    </div>
+    <button>
+      <mat-icon routerLink="about" matTooltip="view all pets">
+                  perm_media</mat-icon>
+    </button>
   </mat-toolbar>
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
-    <div class="container" *ngIf="jumpnewpage()">
-      <mat-form-field appearance="standard">
-          <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Kshama" #input >
-          </mat-form-field>
-   <div class="mat-elevation-z8" style="background-color: black;">
-      <table mat-table [dataSource]="dataSource" matSort>
-
-    <ng-container matColumnDef="firstname">
-      <th mat-header-cell *matHeaderCellDef> FIRST NAME </th>
-      <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="lastname">
-      <th mat-header-cell *matHeaderCellDef> LAST NAME </th>
-      <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> EMAIL ID </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef> PHONE NO </th>
-      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="address">
-      <th mat-header-cell *matHeaderCellDef> ADDRESS </th>
-      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="petname">
-      <th mat-header-cell *matHeaderCellDef> PET NAME </th>
-      <td mat-cell *matCellDef="let element"> {{element.petname}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="petprice">
-      <th mat-header-cell *matHeaderCellDef> PET PRICE </th>
-      <td mat-cell *matCellDef="let element"> {{element.petprice}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-      <td mat-cell *matCellDef="let row">
-        <button mat-icon-button color="primary" (click)="editEmployee(row)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button style="margin-left: 10px ;" (click)="deleteEmployee(row.id)" mat-icon-button color="warn">
-          <mat-icon>delete</mat-icon>
-        </button>
-        <!-- <button style="margin-left: 10px ;" mat-icon-button color="warn">
-          <mat-icon>commute</mat-icon>
-        </button> -->
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter</td>
-    </tr>
-
-  </table>
-  <mat-progress-bar mode="buffer"></mat-progress-bar>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 50]"
-                 showFirstLastButtons 
-                 aria-label="Select page of periodic elements">
-  </mat-paginator>
- <div></div>>
-</div>
-</div>
-</body>
-
+    
   

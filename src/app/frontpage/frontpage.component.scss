@@ -1,0 +1,32 @@
+body {
+    background-image: url('https://img.freepik.com/premium-photo/pawsitively-adorable-wallpaper-vector-cute-dog-patterns_983420-19102.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    overflow: hidden;
+    height: 91.7%;
+}
+
+.example-card {
+    max-width: 360px;
+    margin-left: 520px;
+    margin-top: 200px;
+    max-height: 330px;
+    background-color:rgb(179, 60, 90);
+  }
+
+  h1 {
+    text-shadow: rgba(0, 0, 0, 0.298039) 6px 6px;
+    text-align: center;
+  }
+  
+  .example-header-image {
+    margin-left: 45px;
+    height: 270px;
+    width: 270px;
+    background-image: url('https://t3.ftcdn.net/jpg/05/68/02/36/360_F_568023692_15idt2j4V5fvXr2YDTbijyl292IRyyMJ.jpg');
+    background-size: cover;
+    
+  }

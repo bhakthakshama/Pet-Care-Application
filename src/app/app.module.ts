@@ -25,6 +25,7 @@ import { AboutComponent } from './about/about.component';
 import {MatCardModule} from '@angular/material/card';
 import { ReviewComponent } from './review/review.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FrontpageComponent } from './frontpage/frontpage.component';
 
 // const routes: Routes = [
 //   { path : 'home', component: HomeComponent },
@@ -37,7 +38,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     FormDataComponent,
     HomeComponent,
     AboutComponent,
-    ReviewComponent
+    ReviewComponent,
+    FrontpageComponent
   ],
   imports: [
     BrowserModule,
